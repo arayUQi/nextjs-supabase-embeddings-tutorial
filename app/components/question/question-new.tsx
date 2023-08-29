@@ -76,7 +76,7 @@ const QuestionNew = () => {
             onChange={(e) => setQuestion(e.target.value)}
             rows={4}
             className="focus:outline-none p-2 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500 focus:ring-2"
-            placeholder="質問を入力する"
+            placeholder="例：先日の座談会の内容について教えてください"
             disabled={loading}
             required
           />
@@ -87,20 +87,20 @@ const QuestionNew = () => {
             <Loading />
           ) : (
             <button
-              className="bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-3"
+              className="bg-blue-400 hover:bg-blue-500 focus:ring-4 focus:ring-yellow-300 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-3"
               type="submit"
               disabled={loading}
             >
-              質問する
+              質問を送信する
             </button>
           )}
         </div>
       </form>
 
       <div className="flex items-start space-x-5">
-        <div className="flex-shrink-0">
-          <Image src="/robot.png" className="rounded" alt="image" width={50} height={50} />
-        </div>
+        {/* <div className="flex-shrink-0">
+          <Image src="" className="rounded" alt="image" width={50} height={50} />
+        </div> */}
         <div className="leading-relaxed break-words whitespace-pre-wrap">
           <AnimatePresence mode="wait">
             <motion.div>
@@ -114,7 +114,7 @@ const QuestionNew = () => {
                         <div>{content}</div>
                       ) : (
                         <div className="mt-5">
-                          <div>URL:</div>
+                          <div>🔹回答の根拠はこちらです</div>
                           <div className="flex flex-col items-start">
                             {content.split('\n').map((url, index2) => {
                               return (
@@ -137,7 +137,7 @@ const QuestionNew = () => {
               ) : loading ? (
                 <div>少々お待ち下さい...</div>
               ) : (
-                <div>何でも質問してね</div>
+                <div>ここに回答が表示されます</div>
               )}
             </motion.div>
           </AnimatePresence>

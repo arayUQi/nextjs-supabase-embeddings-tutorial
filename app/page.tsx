@@ -5,7 +5,7 @@ import QuestionNew from './components/question/question-new'
 const Page = () => {
   return (
     <div className="h-full">
-      <KnowledgeButton />
+      {/* <KnowledgeButton /> */}
       <QuestionNew />
     </div>
   )
